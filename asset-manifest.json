@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jazz-bingo-webapp/static/css/main.f855e6bc.css",
-    "main.js": "/jazz-bingo-webapp/static/js/main.b5231327.js",
-    "static/js/787.7c3d4fcf.chunk.js": "/jazz-bingo-webapp/static/js/787.7c3d4fcf.chunk.js",
-    "static/media/logo.svg": "/jazz-bingo-webapp/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/jazz-bingo-webapp/static/css/main.6c2184d3.css",
+    "main.js": "/jazz-bingo-webapp/static/js/main.36d55e3a.js",
+    "static/js/787.434d911f.chunk.js": "/jazz-bingo-webapp/static/js/787.434d911f.chunk.js",
+    "static/media/jazz-logo-mark.png": "/jazz-bingo-webapp/static/media/jazz-logo-mark.db153a430cb4bd0c12fd.png",
     "index.html": "/jazz-bingo-webapp/index.html",
-    "main.f855e6bc.css.map": "/jazz-bingo-webapp/static/css/main.f855e6bc.css.map",
-    "main.b5231327.js.map": "/jazz-bingo-webapp/static/js/main.b5231327.js.map",
-    "787.7c3d4fcf.chunk.js.map": "/jazz-bingo-webapp/static/js/787.7c3d4fcf.chunk.js.map"
+    "main.6c2184d3.css.map": "/jazz-bingo-webapp/static/css/main.6c2184d3.css.map",
+    "main.36d55e3a.js.map": "/jazz-bingo-webapp/static/js/main.36d55e3a.js.map",
+    "787.434d911f.chunk.js.map": "/jazz-bingo-webapp/static/js/787.434d911f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.b5231327.js"
+    "static/css/main.6c2184d3.css",
+    "static/js/main.36d55e3a.js"
   ]
 }

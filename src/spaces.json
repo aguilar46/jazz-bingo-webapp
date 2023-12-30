@@ -1,0 +1,58 @@
+{
+  "name": "Utah Jazz",
+  "customFreeSpace": "10+ Turnovers (Free Space)",
+  "options": [
+    { "short": "Opponent wins challenge", "full": "Opponent wins challenge" },
+    { "short": "30 point deficit", "full": "30 point deficit" },
+    { "short": "Jazz lose challenge", "full": "Jazz lose challenge" },
+    { "short": "Back to back turnovers", "full": "Back to back turnovers" },
+    { "short": "Lauri Makes a 3", "full": "Lauri Makes a 3" },
+    {
+      "short": "Jazz allow uncontested dunk",
+      "full": "Jazz allow uncontested dunk"
+    },
+    { "short": "Sexton iso", "full": "Sexton Iso" },
+    {
+      "short": "Markkanen with 3 shots in a half",
+      "full": "Markkanen with 3 shots in a half"
+    },
+    { "short": "Kessler makes a 3", "full": "Kessler makes a 3" },
+    { "short": "Agbaji blocks a shot", "full": "Agbaji blocks a shot" },
+    { "short": "Shot clock violation", "full": "Shot clock violation" },
+    { "short": "25 point deficit", "full": "25 point deficit" },
+    { "short": "THT dribbles off of foot", "full": "THT dribbles off of foot" },
+    { "short": "Clarkson iso", "full": "Clarkson iso" },
+    {
+      "short": "Holly Rowe complements someone after they miss a shot",
+      "full": "Holly Rowe complements someone after they miss a shot"
+    },
+    { "short": "THT iso", "full": "THT iso" },
+    { "short": "Will Hardy makes a face", "full": "Will Hardy makes a face" },
+    { "short": "15 point deficit", "full": "15 point deficit" },
+    { "short": "Yurtseven subbed in", "full": "Yurtseven subbed in" },
+    { "short": "Jazz down at half", "full": "Jazz down at half" },
+    { "short": "Jazz allow a wide open 3", "full": "Jazz allow a wide open 3" },
+    {
+      "short": "Hardy calls a timeout a minute into the quarter",
+      "full": "Hardy calls a timeout a minute into the quarter"
+    },
+    { "short": "8 Second Violation", "full": "8 Second Violation" },
+    { "short": "No pass play", "full": "No pass play" },
+    {
+      "short": "Holly Rowe complementing the opponent",
+      "full": "Holly Rowe complementing the opponent"
+    },
+    {
+      "short": "Bolerjack mentioning FT% and then player misses FT",
+      "full": "Bolerjack mentioning FT% and then player misses FT"
+    },
+    {
+      "short": "Announcer's curse",
+      "full": "After mentioning something like a statistic, the player does the opposite"
+    },
+    {
+      "short": "Everything but the make",
+      "full": "Some sweet moves down low, but misses the shot"
+    }
+  ]
+}

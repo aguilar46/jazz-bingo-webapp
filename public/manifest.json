@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Utah Jazz Bingo",
+  "name": "Bingo Web App for Watching Utah Jazz Games",
   "icons": [
     {
       "src": "favicon.ico",

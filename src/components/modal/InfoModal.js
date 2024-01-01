@@ -7,17 +7,14 @@ import React from 'react';
 import _ from 'lodash';
 import Modal from 'react-modal';
 //local
-import ModalView from './ModalView';
 import { ModalBtn, ModalInfoText } from './ModalComponents';
 
 const InfoModal = (props) => {
   const { message, onRequestClose } = props;
   return (
-    <Modal {..._.omit(props, ['message'])} testID="info-modal">
-      <ModalView>
-        <ModalInfoText className="info-modal-text">{message}</ModalInfoText>
-        <ModalBtn title="OK" onPress={onRequestClose} />
-      </ModalView>
+    <Modal {..._.omit(props, ['message'])} className="info-modal">
+      <ModalInfoText className="info-modal-text">{message}</ModalInfoText>
+      <ModalBtn title="OK" onPress={onRequestClose} />
     </Modal>
   );
 };

@@ -11,13 +11,13 @@ const TopView = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
 `;
+
 const InnerView = styled.div`
   background-color: white;
   margin: 20px;
   padding: 20px;
-  border: solid 2px black;
+  border: solid 1px black;
   border-radius: 12px;
 `;
 

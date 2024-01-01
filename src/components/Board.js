@@ -19,8 +19,9 @@ import BingoModal, { returnOptions } from './modal/BingoModal';
 const MainView = styled.div`
   height: 100%;
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* flex-direction: column; */
 `;
 
 const RowView = styled.div`
@@ -90,19 +91,17 @@ const Board = (props) => {
       : viewInfo(row, column);
 
   return (
-    <MainView className="top-view" testID="main-bingo-view">
-      {board.map((row, rowIdx) => (
-        <RowView key={`board-row-${rowIdx}`}>
-          {row.map((space, colIdx) => (
-            <StyledSpace
-              key={`board-space-row-${rowIdx}-col-${colIdx}`}
-              selected={space.isSelected}
-              label={space.short}
-              onClick={() => onPress(rowIdx, colIdx)}
-            />
-          ))}
-        </RowView>
-      ))}
+    <MainView className="top-view">
+      {board.map((row, rowIdx) =>
+        row.map((space, colIdx) => (
+          <StyledSpace
+            key={`board-space-row-${rowIdx}-col-${colIdx}`}
+            selected={space.isSelected}
+            label={space.short}
+            onClick={() => onPress(rowIdx, colIdx)}
+          />
+        ))
+      )}
       {infoModal}
       {bingoModal}
     </MainView>

@@ -2,14 +2,16 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
+import { useAtom } from 'jotai';
 //local
+import './App.css';
 import Board from './Board';
 import { useModal } from '../util/useModal';
 import HamburgerModal, { hamburgerReturnOptions } from './modal/HamburgerModal';
 import OptionsModal from './modal/OptionsModal';
 import { atoms, touchTypes } from '../data';
 import { getBingoTypeDisplayName, createNewBoard } from '../util';
-import { useAtom } from 'jotai';
+import gearIcon from '../images/211751_gear_icon.png';
 
 const TopView = styled.div`
   height: 100%;
@@ -33,8 +35,12 @@ const Spacer = styled.div`
 `;
 
 const HamburgerBtn = styled.button`
-  background-color: white;
-  height: 100%;
+  height: 5em;
+  width: 5em;
+  background-image: url(${gearIcon});
+  border: none;
+  background-size: 5em 5em;
+  background-color: transparent;
 `;
 
 const clearBoard = (board) => {
@@ -102,9 +108,7 @@ const App = (props) => {
         <HamburgerBtn
           className="hamburger-button"
           onClick={handleHamburgerModal}
-        >
-          ...
-        </HamburgerBtn>
+        />
       </HeaderView>
       <Board className="game-board" />
       {hamburgerModal}

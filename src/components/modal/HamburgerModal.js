@@ -10,15 +10,6 @@ import BingoTypeCombo from '../BingoTypeCombo';
 //local
 import { CloseBtn, ModalBtn } from './ModalComponents';
 
-const TopView = styled.div`
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-`;
-
 const InnerView = styled.div`
   position: absolute;
   top: 5px;
@@ -27,6 +18,8 @@ const InnerView = styled.div`
   padding: 20px;
   border: solid 1px black;
   border-radius: 2px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledText = styled.div`
@@ -64,20 +57,16 @@ const HamburgerModal = (props) => {
     ));
 
   return (
-    <Modal {...props}>
-      <TopView>
-        <InnerView>
-          {buttons}
-          <StyledText>Bingo Type</StyledText>
-          <BingoTypeCombo
-            defaultValue={bingoType}
-            onChange={(type) =>
-              onClose(hamburgerReturnOptions.BINGO_TYPE, type)
-            }
-          />
-          <CloseBtn onClick={onClose}>Cancel</CloseBtn>
-        </InnerView>
-      </TopView>
+    <Modal {...props} className="hamburger-modal">
+      <InnerView className="hamburger-inner">
+        {buttons}
+        <StyledText>Bingo Type</StyledText>
+        <BingoTypeCombo
+          defaultValue={bingoType}
+          onChange={(type) => onClose(hamburgerReturnOptions.BINGO_TYPE, type)}
+        />
+        <CloseBtn onClick={onClose}>Cancel</CloseBtn>
+      </InnerView>
     </Modal>
   );
 };

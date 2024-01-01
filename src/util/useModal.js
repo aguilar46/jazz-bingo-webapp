@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
+import { generateClassname } from '.';
 
 export const useModal = (ModalComp = Modal, defaultProps) => {
   const [props, setProps] = useState({ isOpen: false });
@@ -26,7 +27,13 @@ export const useModal = (ModalComp = Modal, defaultProps) => {
       setVisible(true);
     });
 
-  const modalInst = <ModalComp transparent testID="modal" {...props} />;
+  const modalInst = (
+    <ModalComp
+      transparent
+      className={generateClassname(props.className, 'modal')}
+      {...props}
+    />
+  );
 
   return { modal: modalInst, show };
 };

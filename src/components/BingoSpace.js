@@ -11,6 +11,8 @@ import PropTypes from 'prop-types';
 
 const Space = styled.button`
   border: solid 1px black;
+  text-shadow: 1px 1px white;
+  font-size: 1em;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -18,6 +20,8 @@ const Space = styled.button`
 
   ${(props) => props.selected && `background-image: url(${jazzIcon});`}
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const BingoSpace = (props) => {

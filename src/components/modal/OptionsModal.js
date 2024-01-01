@@ -18,13 +18,23 @@ const Spacer = styled.div`
 
 const options = optionData.options;
 
+const StyledList = styled(Listbox)`
+  .rw-list-option {
+    border-top: solid 1px black;
+  }
+
+  .rw-list-option:first-child {
+    border-top: none;
+  }
+`;
+
 const OptionsModal = (props) => {
   const { onRequestClose } = props;
 
   return (
     <Modal {...props}>
       <ModalView>
-        <Listbox data={options} textField="full" />
+        <StyledList data={options} textField="full" />
         <Spacer />
         <ModalBtn onClick={onRequestClose}> Close </ModalBtn>
       </ModalView>

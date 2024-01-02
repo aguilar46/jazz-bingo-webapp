@@ -12,6 +12,8 @@ import OptionsModal from './modal/OptionsModal';
 import { atoms, touchTypes } from '../data';
 import { getBingoTypeDisplayName, createNewBoard } from '../util';
 import gearIcon from '../images/211751_gear_icon.png';
+import InfoModal from './modal/InfoModal';
+import AboutView from './AboutView';
 
 const TopView = styled.div`
   height: 100%;
@@ -63,6 +65,7 @@ const App = (props) => {
     useModal(HamburgerModal);
   const { modal: allOptionsModal, show: showAllOptions } =
     useModal(OptionsModal);
+  const { modal: aboutModal, show: showAboutModal } = useModal(InfoModal);
 
   //init board
   useEffect(() => {
@@ -92,6 +95,9 @@ const App = (props) => {
         case hamburgerReturnOptions.VIEW_ALL_OPTIONS:
           showAllOptions();
           break;
+        case hamburgerReturnOptions.ABOUT:
+          showAboutModal({ message: <AboutView /> });
+          break;
         default:
           break;
       }
@@ -113,6 +119,7 @@ const App = (props) => {
       <Board className="game-board" />
       {hamburgerModal}
       {allOptionsModal}
+      {aboutModal}
     </TopView>
   );
 };

@@ -22,6 +22,7 @@ const Space = styled.button`
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: transparent;
 `;
 
 const BingoSpace = (props) => {

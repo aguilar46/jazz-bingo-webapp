@@ -10,6 +10,7 @@ import styled from 'styled-components';
 //local
 import { ModalBtn, ModalInfoText, CloseBtn } from './ModalComponents';
 import BingoTypeCombo from '../BingoTypeCombo';
+import ModalView from './ModalView';
 
 export const returnOptions = {
   NEW_GAME: 'newGame',
@@ -31,30 +32,32 @@ const BingoModal = (props) => {
 
   return (
     <Modal {..._.omit(props, ['bingoType'])} className="bingo-modal">
-      <StyledInfoText>BINGO!</StyledInfoText>
-      <ModalBtn
-        onClick={() =>
-          onRequestClose({
-            returnValue: { selectedOption: returnOptions.NEW_GAME },
-          })
-        }
-      >
-        New Game
-      </ModalBtn>
-      <StyledCombo
-        className="bingo-modal-change-type"
-        placeholder="Change Game Type"
-        excludeType={bingoType}
-        onValueChange={(value) =>
-          onRequestClose({
-            returnValue: {
-              selectedOption: returnOptions.CHANGE_TYPE,
-              bingoType: value,
-            },
-          })
-        }
-      />
-      <CloseBtn onClick={onRequestClose}>Close </CloseBtn>
+      <ModalView>
+        <StyledInfoText>BINGO!</StyledInfoText>
+        <ModalBtn
+          onClick={() =>
+            onRequestClose({
+              returnValue: { selectedOption: returnOptions.NEW_GAME },
+            })
+          }
+        >
+          New Game
+        </ModalBtn>
+        <StyledCombo
+          className="bingo-modal-change-type"
+          placeholder="Change Game Type"
+          excludeType={bingoType}
+          onValueChange={(value) =>
+            onRequestClose({
+              returnValue: {
+                selectedOption: returnOptions.CHANGE_TYPE,
+                bingoType: value,
+              },
+            })
+          }
+        />
+        <CloseBtn onClick={onRequestClose}>Close </CloseBtn>
+      </ModalView>
     </Modal>
   );
 };

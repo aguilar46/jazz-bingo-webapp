@@ -1,5 +1,5 @@
 //3rd party
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
 import { useAtom } from 'jotai';
@@ -14,6 +14,9 @@ import { getBingoTypeDisplayName, createNewBoard } from '../util';
 import gearIcon from '../images/211751_gear_icon.png';
 import InfoModal from './modal/InfoModal';
 import AboutView from './AboutView';
+import { toBlob } from 'html-to-image';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TopView = styled.div`
   height: 100%;
@@ -56,6 +59,7 @@ const clearBoard = (board) => {
 const App = (props) => {
   const [bingoType, setBingoType] = useAtom(atoms.bingoType);
   const [board, setBoard] = useAtom(atoms.board);
+  const boardRef = useRef();
 
   const { modal: hamburgerModal, show: showHamburgerModal } =
     useModal(HamburgerModal);
@@ -91,6 +95,15 @@ const App = (props) => {
         case hamburgerReturnOptions.ABOUT:
           showAboutModal({ message: <AboutView /> });
           break;
+        case hamburgerReturnOptions.EXPORT:
+          const blob = await toBlob(boardRef.current, { cacheBust: true });
+          navigator.clipboard.write([
+            new ClipboardItem({
+              [blob.type]: blob,
+            }),
+          ]);
+          toast('Image copied to clipboard');
+          break;
         default:
           break;
       }
@@ -109,10 +122,11 @@ const App = (props) => {
           onClick={handleHamburgerModal}
         />
       </HeaderView>
-      <Board className="game-board" />
+      <Board className="game-board" ref={boardRef} />
       {hamburgerModal}
       {allOptionsModal}
       {aboutModal}
+      <ToastContainer position="bottom-right" />
     </TopView>
   );
 };

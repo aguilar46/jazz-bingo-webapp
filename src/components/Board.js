@@ -9,10 +9,9 @@ import styled from 'styled-components';
 import { useAtom } from 'jotai';
 //local
 import BingoSpace from './BingoSpace';
-import { touchTypes, atoms } from '../data';
+import { atoms } from '../data';
 import { createNewBoard } from '../util';
 import { useModal } from '../util/useModal';
-import InfoModal from './modal/InfoModal';
 import bingoValidators from '../util/bingo-validators';
 import BingoModal, { returnOptions } from './modal/BingoModal';
 
@@ -24,23 +23,13 @@ const MainView = styled.div`
   /* flex-direction: column; */
 `;
 
-const RowView = styled.div`
-  height: 20%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-`;
-
 const StyledSpace = styled(BingoSpace)`
   width: 20%;
 `;
 
 const Board = (props) => {
   const [bingoType, setBingoType] = useAtom(atoms.bingoType);
-  const [longPressAction] = useAtom(atoms.longPressAction);
   const [board, setBoard] = useAtom(atoms.board);
-  const { modal: infoModal, show: showInfo } = useModal(InfoModal);
   const { modal: bingoModal, show: showBingoAndAsk } = useModal(BingoModal);
 
   if (!board) {
@@ -75,20 +64,7 @@ const Board = (props) => {
     setBoard(newBoard);
   };
 
-  const viewInfo = (row, column) => {
-    const space = board[row][column];
-    showInfo({ message: space.full });
-  };
-
-  const onPress = (row, column) =>
-    longPressAction === touchTypes.VIEW
-      ? toggleSelect(row, column)
-      : viewInfo(row, column);
-
-  const onLongPress = (row, column) =>
-    longPressAction === touchTypes.SELECT
-      ? toggleSelect(row, column)
-      : viewInfo(row, column);
+  const onPress = (row, column) => toggleSelect(row, column);
 
   return (
     <MainView className="top-view">
@@ -97,12 +73,11 @@ const Board = (props) => {
           <StyledSpace
             key={`board-space-row-${rowIdx}-col-${colIdx}`}
             selected={space.isSelected}
-            label={space.short}
+            label={space.full}
             onClick={() => onPress(rowIdx, colIdx)}
           />
         ))
       )}
-      {infoModal}
       {bingoModal}
     </MainView>
   );

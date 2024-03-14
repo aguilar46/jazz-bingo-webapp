@@ -29,7 +29,7 @@ const BingoSpace = (props) => {
   const { label } = props;
 
   return (
-    <Space {..._.omit(props, ['label'])} className="bingo-space">
+    <Space {..._.omit(props, ['label'])} className="bingo-space" title={label}>
       {label}
     </Space>
   );

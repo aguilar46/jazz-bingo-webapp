@@ -11,8 +11,7 @@ export const bingoTypes = {
 };
 
 export const dataTypes = {
-  GAME: 'game',
-  LONG_PRESS: 'long-press-action',
+  GAME: 'jazz-bingo-game',
   BINGO_TYPE: 'bingo-type',
 };
 
@@ -27,10 +26,7 @@ const bingoType = atomWithStorage(
   { getOnInit: true }
 );
 
-const longPressAction = atomWithStorage(dataTypes.LONG_PRESS, touchTypes.VIEW);
-
 export const atoms = {
   board,
   bingoType,
-  longPressAction,
 };

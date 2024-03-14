@@ -9,7 +9,7 @@ import Board from './Board';
 import { useModal } from '../util/useModal';
 import HamburgerModal, { hamburgerReturnOptions } from './modal/HamburgerModal';
 import OptionsModal from './modal/OptionsModal';
-import { atoms, touchTypes } from '../data';
+import { atoms } from '../data';
 import { getBingoTypeDisplayName, createNewBoard } from '../util';
 import gearIcon from '../images/211751_gear_icon.png';
 import InfoModal from './modal/InfoModal';
@@ -53,12 +53,8 @@ const clearBoard = (board) => {
   return newBoard;
 };
 
-const getToggleLongPress = (action) =>
-  action === touchTypes.VIEW ? touchTypes.SELECT : touchTypes.VIEW;
-
 const App = (props) => {
   const [bingoType, setBingoType] = useAtom(atoms.bingoType);
-  const [longPressAction, setLongPressAction] = useAtom(atoms.longPressAction);
   const [board, setBoard] = useAtom(atoms.board);
 
   const { modal: hamburgerModal, show: showHamburgerModal } =
@@ -88,9 +84,6 @@ const App = (props) => {
           break;
         case hamburgerReturnOptions.BINGO_TYPE:
           setBingoType(payload.value);
-          break;
-        case hamburgerReturnOptions.TOGGLE_LONG_PRESS:
-          setLongPressAction(getToggleLongPress(longPressAction));
           break;
         case hamburgerReturnOptions.VIEW_ALL_OPTIONS:
           showAllOptions();

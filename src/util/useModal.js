@@ -7,8 +7,10 @@ export const useModal = (ModalComp = Modal, defaultProps) => {
 
   const setVisible = (isOpen) => setProps((p) => ({ ...p, isOpen }));
 
+  //set default props only once
   useEffect(() => {
     setProps((props) => ({ ...props, ...defaultProps }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const show = (showProps) =>

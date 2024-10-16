@@ -1,6 +1,5 @@
 {
   "name": "Utah Jazz",
-  "customFreeSpace": "10+ Turnovers (Free Space)",
   "options": [
     "Opponent wins challenge",
     "30 point deficit",
@@ -13,13 +12,10 @@
     "Kessler makes a 3",
     "Shot clock violation",
     "25 point deficit",
-    "THT dribbles off of foot",
     "Clarkson iso",
     "Holly Rowe complements someone after they miss a shot",
-    "THT iso",
     "Will Hardy makes a face",
     "15 point deficit",
-    "Yurtseven subbed in",
     "Jazz down at half",
     "Jazz allow a wide open 3",
     "Hardy calls a timeout a minute into the quarter",
@@ -28,6 +24,8 @@
     "Holly Rowe complementing the opponent",
     "Bolerjack mentioning FT% and then player misses FT",
     "Announcer's curse: After mentioning something like a statistic, the player does the opposite",
-    "Everything but the make:Some sweet moves down low, but misses the shot"
+    "Everything but the make: Some sweet moves down low, but misses the shot",
+    "A rookie makes a 3",
+    "10+ Turnovers"
   ]
 }

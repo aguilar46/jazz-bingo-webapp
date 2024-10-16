@@ -5,10 +5,11 @@
 //3rd party
 import React, { useMemo } from 'react';
 import _ from 'lodash';
+import 'react-widgets/styles.css';
+import { Combobox } from 'react-widgets';
 //local
 import { bingoTypes } from '../data';
 import { getBingoTypeDisplayName } from '../util';
-import { Combobox } from 'react-widgets';
 
 const allTypes = Object.values(bingoTypes).map((value) => ({
   label: getBingoTypeDisplayName(value),

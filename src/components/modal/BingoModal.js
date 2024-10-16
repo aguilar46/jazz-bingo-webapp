@@ -15,6 +15,7 @@ import ModalView from './ModalView';
 export const returnOptions = {
   NEW_GAME: 'newGame',
   CHANGE_TYPE: 'changeType',
+  EXPORT: 'export',
 };
 
 const StyledInfoText = styled(ModalInfoText)`
@@ -42,6 +43,16 @@ const BingoModal = (props) => {
           }
         >
           New Game
+        </ModalBtn>
+        <br />
+        <ModalBtn
+          onClick={() =>
+            onRequestClose({
+              returnValue: { selectedOption: returnOptions.EXPORT },
+            })
+          }
+        >
+          Share
         </ModalBtn>
         <StyledCombo
           className="bingo-modal-change-type"

@@ -17,6 +17,7 @@ import AboutView from './AboutView';
 import { toBlob } from 'html-to-image';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TypeModal from './modal/TypeModal';
 
 const TopView = styled.div`
   height: 100%;
@@ -30,9 +31,13 @@ const HeaderView = styled.div`
   flex-direction: row;
 `;
 
-const HeaderText = styled.div`
+const LINK_BLUE = '#0000FF';
+const StyledButton = styled.button`
   font-size: 20px;
   padding: 10px;
+  border: none;
+  background-color: transparent;
+  color: ${LINK_BLUE};
 `;
 
 const Spacer = styled.div`
@@ -66,6 +71,7 @@ const App = (props) => {
   const { modal: allOptionsModal, show: showAllOptions } =
     useModal(OptionsModal);
   const { modal: aboutModal, show: showAboutModal } = useModal(InfoModal);
+  const { modal: typeModal, show: showTypeModal } = useModal(TypeModal);
 
   //init board
   useEffect(() => {
@@ -110,12 +116,17 @@ const App = (props) => {
     }
   };
 
+  const onTypeClick = async () => {
+    const newType = await showTypeModal();
+    newType && setBingoType(newType);
+  };
+
   return (
     <TopView className="top-view">
       <HeaderView className="main-header">
-        <HeaderText className="header-text">
-          BINGO: {getBingoTypeDisplayName(bingoType)}{' '}
-        </HeaderText>
+        <StyledButton className="header-text" onClick={onTypeClick}>
+          BINGO: {getBingoTypeDisplayName(bingoType)}
+        </StyledButton>
         <Spacer />
         <HamburgerBtn
           className="hamburger-button"
@@ -126,6 +137,7 @@ const App = (props) => {
       {hamburgerModal}
       {allOptionsModal}
       {aboutModal}
+      {typeModal}
       <ToastContainer position="bottom-right" />
     </TopView>
   );

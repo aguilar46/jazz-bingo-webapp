@@ -40,7 +40,7 @@ const displayNameMap = {
   [hamburgerReturnOptions.NEW_GAME]: 'New Game',
   [hamburgerReturnOptions.CLEAR_BOARD]: 'Clear Board',
   [hamburgerReturnOptions.VIEW_ALL_OPTIONS]: 'View All Options',
-  [hamburgerReturnOptions.EXPORT]: 'Copy to Clipboard',
+  [hamburgerReturnOptions.EXPORT]: 'Share',
   [hamburgerReturnOptions.ABOUT]: 'About',
 };
 

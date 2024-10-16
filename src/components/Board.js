@@ -14,6 +14,8 @@ import { createNewBoard } from '../util';
 import { useModal } from '../util/useModal';
 import bingoValidators from '../util/bingo-validators';
 import BingoModal, { returnOptions } from './modal/BingoModal';
+import { toast } from 'react-toastify';
+import { toBlob } from 'html-to-image';
 
 const MainView = styled.div`
   height: 100%;
@@ -60,6 +62,15 @@ const Board = forwardRef((props, ref) => {
           break;
         case returnOptions.CHANGE_TYPE:
           setBingoType(result.bingoType);
+          break;
+        case returnOptions.EXPORT:
+          const blob = await toBlob(ref.current, { cacheBust: true });
+          navigator.clipboard.write([
+            new ClipboardItem({
+              [blob.type]: blob,
+            }),
+          ]);
+          toast('Image copied to clipboard');
           break;
         default:
           break;
